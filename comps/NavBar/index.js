@@ -5,7 +5,6 @@ const NavBar = ({}) => <div>
 
 </div>
 
-
 navBar.defaultProps = {
     
 }
