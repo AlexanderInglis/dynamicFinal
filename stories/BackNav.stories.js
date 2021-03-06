@@ -3,8 +3,8 @@ import BackHeader from "../comps/BackHeader";
 import BottomNav from "../comps/NavBar";
 
 export default {
-	title: "Comps/BottomNav",
-	component: BottomNav,
+	title: "Comps/BackHeader",
+	component: BackHeader,
 };
 
-export const BottomNavigation = () => <BottomNav></BottomNav>;
+export const BackHeaderNav = () => <BackHeader></BackHeader>;
