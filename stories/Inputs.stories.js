@@ -1,5 +1,5 @@
 import React from "react";
-import SignInInput from "../comps/Input";
+import SignInInput from "../comps/SignInInput";
 import PageTitle from "../comps/PageTitle";
 import SearchBar from "../comps/SearchBar";
 
