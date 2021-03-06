@@ -20,7 +20,7 @@ p{
 
 const ImageUpload = () => {
     return<ImageCont>
-        <img src="./UploadImage.png"/>
+        <img src={require('./UploadImage.png')} />
         <p>Upload Image</p>
     </ImageCont>
 };

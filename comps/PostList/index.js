@@ -1,6 +1,8 @@
 import React from 'react';
 import styled, {css} from 'styled-components';
 
+const image = require("./PlaceholderImage.png");
+
 const ImageContainer = styled.div`
 min-width:375;
 min-height:500;
@@ -31,7 +33,7 @@ const PostList = ({img}) => {
 };
 
 PostList.defaultProps = {
-    img:'./UploadImage.png',
+    img: image,
 
 };
 
