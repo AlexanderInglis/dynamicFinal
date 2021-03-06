@@ -1,13 +1,13 @@
 import React from 'react';
 import styled, {css} from 'styled-components';
 
-const image = require("./PlaceholderImage.png");
+const PostImage = require("./PlaceholderImage.png");
 
 const ImageContainer = styled.div`
 min-width:375;
 min-height:500;
 display: grid;
-grid-template-columns: auto auto auto;
+ grid-template-columns:repeat(3, 125px);
 `;
 
 const ImageCont = styled.img`
@@ -33,7 +33,7 @@ const PostList = ({img}) => {
 };
 
 PostList.defaultProps = {
-    img: image,
+    img: PostImage,
 
 };
 

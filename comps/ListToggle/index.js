@@ -4,7 +4,7 @@ import SelectTags from '../Select/index';
 
 const Container = styled.div`
 min-height: 44px;
-max-width:"317px";
+max-width:317px;
 min-width: 253px;
 border-radius: 5px;
 display:flex;

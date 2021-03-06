@@ -3,15 +3,15 @@ import styled from 'styled-components'
 
 const Container = styled.button`
 min-height: 43px;
-max-width: ${props => props.width ? props.width : "118px"};
 min-width: 90px;
-background-color: ${props => props.bgcolor ? props.bgcolor : "#fff"};
-border: ${props => props.stroke ? props.stroke : "1px solid #EAE7E7"};
-color: ${props => props.color ? props.color : "#676767"};
 display:flex;
 text-align: center;
 align-items:center;
 justify-content: center;
+max-width: ${props => props.width ? props.width : "118px"};
+background-color: ${props => props.bgcolor ? props.bgcolor : "#fff"};
+border: ${props => props.stroke ? props.stroke : "1px solid #EAE7E7"};
+color: ${props => props.color ? props.color : "#676767"};
 border-radius: ${props => props.radius ? props.radius : "none"};
 font-family: sans-serif;
 font-size: 18px;
