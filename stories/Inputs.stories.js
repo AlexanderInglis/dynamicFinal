@@ -1,5 +1,5 @@
 import React from "react";
-import Input from "../comps/Input";
+import SignInInput from "../comps/Input";
 import PageTitle from "../comps/PageTitle";
 import SearchBar from "../comps/SearchBar";
 
@@ -9,5 +9,5 @@ export default {
 };
 
 export const CustomSearchBar = () => <SearchBar></SearchBar>;
-export const CustomInput = () => <Input></Input>;
+export const CustomInput = () => <SignInInput></SignInInput>;
 export const CustomTitle = () => <PageTitle></PageTitle>;

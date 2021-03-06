@@ -20,7 +20,7 @@ const BoxTitle = styled.h2`
 	color: #000000;
 `;
 
-const Input = ({ title, placeholder, onChange, type }) => {
+const SignInInput = ({ title, placeholder, onChange, type }) => {
 	return (
 		<InputDiv>
 			<BoxTitle>{title}</BoxTitle>
@@ -29,10 +29,10 @@ const Input = ({ title, placeholder, onChange, type }) => {
 	);
 };
 
-Input.defaultProps = {
+SignInInput.defaultProps = {
 	title: "Title",
 	placeholder: "Placeholder Text",
 	type: "text",
 };
 
-export default Input;
+export default SignInInput;
