@@ -19,13 +19,6 @@ const Headerpart = styled.div`
 	width: auto;
 `;
 
-const Closeimg = styled.div`
-	margin-right: 10px;
-	display: flex;
-	justify-content: left;
-	align-items: center;
-`;
-
 const ListItem = styled.div`
 	display: flex;
 	justify-content: left;
@@ -42,16 +35,6 @@ const Bullet = styled.div`
 	border: 3px solid red;
 	border-radius: 50%;
 	margin-right: 10px;
-`;
-
-const Lowerpart = styled.div`
-	display: block-flex;
-	justify-content: space-between;
-	align-items: center;
-	margin: 10px;
-	position: absolute;
-	width: auto;
-	margin-left: 300px;
 `;
 
 const ingredients = styled.div`
