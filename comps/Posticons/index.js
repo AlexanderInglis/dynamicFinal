@@ -1,86 +1,81 @@
-import React, {useEffect, useState} from 'react';
-import Subheading from '../../comps/Subheading';
-import Avatar from '../../comps/Avatar';
-import styled from 'styled-components';
-
-
-const Taskboxcontainer = styled.div`
-width: 100%;
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-
-`;
+import React, { useEffect, useState } from "react";
+import Subheading from "../../comps/Subheading";
+import Avatar from "../../comps/Avatar";
+import styled from "styled-components";
 
 const Headerpart = styled.div`
-width:auto;
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-left:50px;
-margin-right:50px;
+	max-width: 375px;
+	display: flex;
+	align-self: normal;
+	justify-content: space-between;
+	padding: 0px 10px;
 `;
 
 const Closeimg = styled.div`
-
-margin-right:10px;
-display:flex;
-justify-content:center;
-align-items:center;
+	margin-right: 10px;
+	display: flex;
 `;
 
 const Checkimg = styled.div`
-margin-left:10px;
-display:flex;
-justify-content:center;
-align-items:center;
+	margin-left: 10px;
+	display: flex;
 `;
 
 const Titlepart = styled.div`
-display:flex;
-justify-content:center;
-align-items:center;
+	display: flex;
+	padding: 5px;
 `;
 
 const Profilename = styled.div`
-margin-right:100px;
-display:flex;
-justify-content:center;
-align-items:center;
+	display: flex;
 `;
 
 const Profilepicture = styled.div`
-margin-right:10px;
-display:flex;
-justify-content:center;
-align-items:center;
+	margin-right: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 `;
 
+const Profile = styled.div`
+	padding: 5px;
+	font-weight: 800;
+`;
 
-const Posticons = ()=> {
+const RightCont = styled.div`
+	display: flex;
+	align-items: center;
+`;
+const LeftCont = styled.div`
+	display: flex;
+	align-items: center;
+`;
 
+const Posticons = ({ profileName, avatarImg }) => {
+	return (
+		<Headerpart>
+			<LeftCont>
+				<Avatar width="25px" height="25px" bgimg={avatarImg} />
+				<Profile>{profileName}</Profile>
+			</LeftCont>
 
-    return (
-        <Taskboxcontainer>
-
-          <Headerpart>
-          <Profilepicture><Avatar  width="25px" height="25px"/></Profilepicture>
-          <Profilename><Subheading text="Jojoma" fontsize="18px" fontweight="bold"/></Profilename>
-          <Closeimg> <img src={require('./read.png')} /></Closeimg>
-          <Titlepart><img src={require('./fire.png')} /></Titlepart>
-          <Checkimg> <img src={require('./chat.png')} /></Checkimg>
-          </Headerpart>
-
-        </Taskboxcontainer>
-    )
-    
+			<RightCont>
+				<a>Learn Recipe</a>
+				<Titlepart>
+					<img src={require("./fire.png")} />
+				</Titlepart>
+				<Checkimg>
+					<img src={require("./chat.png")} />
+				</Checkimg>
+			</RightCont>
+		</Headerpart>
+	);
 };
-    
-    
-  
- Posticons.defaultProps = {
-      
-  };
-  
-  export default Posticons;
+
+Posticons.defaultProps = {
+	profileName: "Placeholder",
+	avatarImg:
+		"https://images.unsplash.com/photo-1552058544-f2b08422138a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=644&q=80",
+};
+
+export default Posticons;

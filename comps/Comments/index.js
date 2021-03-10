@@ -1,77 +1,85 @@
-import React from 'react';
-import styled from 'styled-components';
-import Avatar from '../../comps/Avatar';
-import Subheading from '../../comps/Subheading';
+import React from "react";
+import styled from "styled-components";
+import Avatar from "../../comps/Avatar";
+import Subheading from "../../comps/Subheading";
 
 const Taskboxcontainer = styled.div`
-width:100%;
-height: auto;
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-
+	max-width: 100%;
+	height: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 `;
 
 const Headerpart = styled.div`
-margin-left:auto;
-margin-right:auto;
-width:50%;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
 `;
 
-const Closeimg = styled.div`
-justify-content:center;
-align-items:center;
-flex-direction:column;
-position:fixed;
-display: flex;
+const Closeimg = styled.a`
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	position: fixed;
+	display: flex;
 `;
-
-
 
 const CommentBox = styled.div`
-width:335px;
-margin-top: 3px;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-text-indent:130px;
-
+	max-width: 335px;
+	min-height: 45px;
+	margin-top: 3px;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding-top: 20px;
 `;
 
-const Checkimg = styled.div`
-margin-left:30px;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-position:fixed;
-display: flex;
-margin-right:5px;
-padding-right:5px;
+const Checkimg = styled.a`
+	margin-left: 30px;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	position: fixed;
+	display: flex;
+	margin-right: 5px;
+	padding-right: 5px;
 `;
 
-const Comments = ()=> {
+const fakedb = [
+	{
+		id: 1,
+		username: "John Doe",
+		comment:
+			"lorem ipsum dolor sit amet. volutpat magna vel massa scelerisque vulputate. Etiam vitae vehicula elit, ipsum dolor sit amet.",
+		profileImg:
+			"https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80",
+	},
+];
 
-
-    return (
-        <Taskboxcontainer>
-
-          <Headerpart>
-          <Closeimg><Avatar width="25px" height="25px"/></Closeimg>
-          <Checkimg><Subheading text="Jesse Laure:" fontsize="18px" fontweight="bold"/></Checkimg>
-         <CommentBox><Subheading text="ipsum dolor sit amet. volutpat magna vel massa scelerisque vulputate. Etiam vitae vehicula elit, ipsum dolor sit amet. volutpat magna vel massa scelerisque vulputate. Etiam vitae vehicula elit," fontsize="15px" fontweight="light"/></CommentBox>
-      
-          </Headerpart>
-
-        </Taskboxcontainer>
-    )
-    
+const Comments = ({ comment }) => {
+	return (
+		<Taskboxcontainer>
+			{comment.map((o) => (
+				<Headerpart>
+					<Closeimg>
+						<Avatar bgimg={o.profileImg} width="25px" height="25px" />
+					</Closeimg>
+					<Checkimg>
+						<Subheading text={o.username} fontsize="18px" fontweight="bold" />
+					</Checkimg>
+					<CommentBox>
+						<Subheading text={o.comment} fontsize="15px" fontweight="light" />
+					</CommentBox>
+				</Headerpart>
+			))}
+		</Taskboxcontainer>
+	);
 };
-    
-    
-  
+
 Comments.defaultProps = {
-      
-  };
-  
-  export default Comments;
+	comment: fakedb,
+};
+
+export default Comments;

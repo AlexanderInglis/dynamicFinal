@@ -1,14 +1,8 @@
-import React from 'react';
-import Post from '../comps/Userpost';
-
-
+import React from "react";
+import UserPost from "../comps/Userpost";
 
 export default {
-    title: 'Posts Image',
-    };
+	title: "User Post",
+};
 
-    export const PostsImageBox = () => (
-        <Post
-            
-        />
-      );
+export const CustomUserPost = () => <UserPost />;
