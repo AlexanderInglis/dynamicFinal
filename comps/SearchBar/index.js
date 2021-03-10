@@ -37,11 +37,14 @@ const SearchInput = styled.input`
 `;
 
 const Icon = styled.img``;
+const Button = styled.a``;
 
 const SearchBar = ({ placeholder }) => {
 	return (
 		<SearchDiv>
-			<Icon src={image}></Icon>
+			<Button>
+				<Icon src={image}></Icon>
+			</Button>
 			<SearchInput placeholder={placeholder}></SearchInput>
 		</SearchDiv>
 	);
