@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Subheading from "../../comps/Subheading";
 import Avatar from "../../comps/Avatar";
 import styled from "styled-components";
+import Like from "../LikeButton";
 
 const Headerpart = styled.div`
 	max-width: 375px;
@@ -62,7 +63,7 @@ const Posticons = ({ profileName, avatarImg }) => {
 			<RightCont>
 				<a>Learn Recipe</a>
 				<Titlepart>
-					<img src={require("./fire.png")} />
+					<Like />
 				</Titlepart>
 				<Checkimg>
 					<img src={require("./chat.png")} />
