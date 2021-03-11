@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import Subheading from '../../comps/Subheading';
 import Avatar from '../../comps/Avatar';
 import styled from 'styled-components';
 
@@ -48,17 +47,47 @@ position: fixed;
 `;
 
 
+const HeaderName = styled.div`
+max-width: auto;
+height:auto
+font-weight: ${(props) => (props.fontweight ? props.fontweight : "700")};
+color: ${(props) => (props.color ? props.color : "black")};
+font-size: ${(props) => (props.fontsize ? props.fontsize : "24px")};
+border-top: ${(props) => (props.bordertop ? props.bordertop : "none")};
+padding: 0px 10px;
+display: flex;
+align-text: left;
+span {
+  display: inline-flex;
+}
+`;
 
-const TaskHeader = ()=> {
+const Location = styled.div`
+max-width: auto;
+height:auto
+font-weight: ${(props) => (props.fontweight ? props.fontweight : "700")};
+color: ${(props) => (props.color ? props.color : "black")};
+font-size: ${(props) => (props.fontsize ? props.fontsize : "24px")};
+border-top: ${(props) => (props.bordertop ? props.bordertop : "none")};
+padding: 0px 10px;
+display: flex;
+align-text: left;
+span {
+  display: inline-flex;
+}
+`;
+
+const TaskHeader = ({profileName, LocationText, avatarImg})=> {
+
 
 
     return (
         <Taskboxcontainer>
 
           <Headerpart>
-          <Closeimg><Avatar width="75px" height="75px"/></Closeimg>
-          <Titlepart><Subheading text="Jojoma" fontsize="18px" fontweight="light"/>
-          <Description><Subheading text="Vancouver BC, Canada" fontsize="10px" fontwieght="light"/></Description>
+          <Closeimg><Avatar width="75px" height="75px" bgimg={avatarImg}/></Closeimg>
+          <Titlepart><HeaderName fontsize="18px" fontweight="light">{profileName}</HeaderName>
+          <Description><Location fontsize="10px" fontwieght="light">{LocationText}</Location></Description>
           </Titlepart>
           <Checkimg><img src={require('./more.png')} /></Checkimg>
           </Headerpart>
@@ -71,7 +100,10 @@ const TaskHeader = ()=> {
     
   
  TaskHeader.defaultProps = {
-
+  profileName: "Placeholder",
+  LocationText: "Vancouver BC, Canada",
+  avatarImg:
+		"https://images.unsplash.com/photo-1552058544-f2b08422138a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=644&q=80",
   };
   
   export default TaskHeader;

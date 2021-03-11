@@ -12,7 +12,7 @@ const ButtonWrapper = styled.button`
     padding:4px;
     border:none;
     border-radius:10px;
-    background-color:#FF2B51;
+    background-color:${props => props.bgColor ? props.bgColor : "#fff"};
     outline:none;
 `;
 
@@ -21,23 +21,26 @@ const ButtonText = styled.div`
     border:none;
     margin:5px;
     backgroundcolor:transparent;
-    color:#fff;
+    color:${props => props.color ? props.color : "#fff"};
     outline:none;
 `;
 
-const Followbutton= ({text,bgColor, disabled, onClick}) => {
+const Followbutton= ({text,bgColor, disabled, onClick, color}) => {
    
     return <ButtonWrapper 
-            disabled={disabled} 
+    disabled={disabled}
             bgColor={bgColor} 
-            onClick={onClick}>
+            onClick={onClick}
+            color={color}>
        <ButtonText disabled={disabled}>{text}</ButtonText>
     </ButtonWrapper>
 }
 
 Followbutton.defaultProps = {
     text : "Follow",
-    bgColor : "",
+    bgColor : "#ff2b51",
+    color: "black",
+    onClick:()=>{}
 }
 
 

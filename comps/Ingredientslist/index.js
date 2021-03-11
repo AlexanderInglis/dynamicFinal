@@ -4,25 +4,24 @@ import styled from "styled-components";
 
 const IngList = styled.div`
 	width: auto;
-	display: inline-flex;
 	justify-content: left;
 	align-items: center;
 	flex-direction: column;
 `;
 
 const Headerpart = styled.div`
-	display: block-flex;
-	justify-content: space-between;
-	align-items: center;
+max-width:279px;
+display: grid;
+grid-template-columns: auto auto;
+grid-gap: 5px;
 	margin: 10px;
-	position: relative;
-	width: auto;
 `;
 
 const ListItem = styled.div`
 	display: flex;
 	justify-content: left;
 	align-items: center;
+	
 `;
 
 const Bullet = styled.div`
@@ -41,7 +40,8 @@ const ingredients = styled.div`
 	font-size: 18px;
 `;
 
-const IngName = styled.div``;
+const IngName = styled.div`
+`;
 
 const fakedb = [
 	{
@@ -56,6 +56,18 @@ const Ingredientslist = ({ item }) => {
 
 			{item.map((o) => (
 				<Headerpart>
+					<ListItem>
+						<Bullet />
+						<IngName>{o.ing}</IngName>
+					</ListItem>
+					<ListItem>
+						<Bullet />
+						<IngName>{o.ing}</IngName>
+					</ListItem>
+					<ListItem>
+						<Bullet />
+						<IngName>{o.ing}</IngName>
+					</ListItem>
 					<ListItem>
 						<Bullet />
 						<IngName>{o.ing}</IngName>
