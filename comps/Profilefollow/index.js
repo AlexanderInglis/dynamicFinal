@@ -4,6 +4,13 @@ import Followbutton from '../Followbutton';
 import TaskHeader from '../Headerprofile';
 import Subheading from '../Subheading';
 
+const Container = styled.div`
+width: 100%;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+`;
 
 const Logboxcontainer = styled.div`
 width: 100%;
@@ -20,14 +27,6 @@ const Headerpart = styled.div`
   align-items:center;
 `;
 
-const Lowerpart = styled.div`
-  width:auto;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-left:50px;
-  margin-right:50px;
-`;
 
 const Logincontainer = styled.div`
 
@@ -43,7 +42,6 @@ const Logincontainer = styled.div`
 `;
 
 const Firstresult = styled.div`
-margin-right:80px;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -56,7 +54,6 @@ align-items:center;
 `;
 
 const Thirdresult = styled.div`
-margin-left:80px;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -67,63 +64,61 @@ const Bottompart = styled.div`
   display:flex;
   justify-content:space-between;
   align-items:center;
-  margin-left:50px;
-  margin-right:50px;
-  margin-top:-10px;
+  padding-top:20px;
+
 `;
 
 const Postsresult = styled.div`
-margin-right:60px;
-display:flex;
-justify-content:center;
-align-items:center;
 `;
 
 const Followersresult = styled.div`
-display:flex;
-justify-content:center;
-align-items:center;
+margin-left:60px;
+margin-right:60px;
 `;
 
 const Likesresult = styled.div`
-margin-left:60px;
-display:flex;
-justify-content:center;
-align-items:center;
 `;
 
-const Profilefollow = ()=> {
+const fakedb = [
+	{
+		id: 1,
+		username: "John Doe",
+		Location:
+			"Vancouver BC, Canada",
+		profileImg:
+			"https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80",
+  NumPosts: 3,
+  NumFollowers: 113,
+  NumLikes: 31,
+	},
+];
 
-    return (
-        <Logboxcontainer>
+const Profilefollow = ({profileaccount})=> {
+    return <Container>
+        {profileaccount.map((o) => {
+        return <Logboxcontainer>
           <Headerpart>
-          <TaskHeader/>
+          <TaskHeader profileName={o.username} LocationText={o.Location} avatarImg={o.profileImg}/>
           </Headerpart>
          
           <Logincontainer>
             <Followbutton text={"Follow"} bg={"#FF2B51"}/> 
           </Logincontainer>
 
-          <Lowerpart>
-          <Firstresult><Subheading text="10" fontsize="12px" fontweight="light"/></Firstresult>
-          <Secondresult><Subheading text="001" fontsize="12px" fontwieght="light"/></Secondresult>
-          <Thirdresult><Subheading text="000" fontsize="12px" fontwieght="light"/></Thirdresult>
-          </Lowerpart>
-
           <Bottompart>
-          <Postsresult><Subheading text="Posts" fontsize="12px" fontweight="light"/></Postsresult>
-          <Followersresult><Subheading text="Followers" fontsize="12px" fontwieght="light"/></Followersresult>
-          <Likesresult><Subheading text="Likes" fontsize="12px" fontwieght="light"/></Likesresult>
+          <Postsresult><Firstresult>{o.NumPosts}</Firstresult><Subheading text="Posts" fontsize="12px" fontweight="light"/></Postsresult>
+          <Followersresult><Secondresult>{o.NumFollowers}</Secondresult><Subheading text="Followers" fontsize="12px" fontweight="light"/></Followersresult>
+          <Likesresult><Thirdresult>{o.NumLikes}</Thirdresult><Subheading text="Likes" fontsize="12px" fontweight="light"/></Likesresult>
           </Bottompart>
-        </Logboxcontainer>
-    )
-    
+          </Logboxcontainer>
+          })}
+</Container>
 };
     
     
   
 Profilefollow.defaultProps = {
-      
+  profileaccount: fakedb,
   };
   
   export default Profilefollow;
