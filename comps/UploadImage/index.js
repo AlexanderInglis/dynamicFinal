@@ -1,69 +1,84 @@
-import React from 'react';
-import styled, {css} from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-const Container = styled.div`
-max-height: 125px;
-max-width: 210px;
-`;
-
-const ImageCont = styled.div`
-max-height: 125px;
-max-width: 210px;
-background-color:#FF2B51;
+const ImgDiv = styled.div`
+min-height: 188px;
+min-width:129px;
+max-width:150px;
+margin-right: 24px;
+background-color:#DCEFFB;
+border-radius:10px;
 display:flex;
-flex-direction: column;
 align-items: center;
 justify-content: center;
-border-radius: 10px;
-padding: 20px;
-`;
-
-const Text = styled.div`
-font-family: sans-serif;
-    color: #FFFFFF;
-    font-size: 14px;
+background-image: url("${(props) => props.bgImg}");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+}
+button{
+    border-radius:100px;
+    width:30px;
+    height:30px;
+    border:none;
+    background: linear-gradient(139.4deg, #175FA4 -8.97%, #39A6DC 100%);
     display:flex;
-    padding-top: 5px;
+    align-items: center;
+    justify-content: center;
+    outline:none;
+}
+
 `;
 
+//when a user uploads a file to this comp the image should display as the background image
+// Need to make this comp so that when a file gets uploaded the plus sign turns into a minus sign
 
-const Image = styled.img`
-min-height: 100px;
-max-height: 100px;
-min-width: 125px;
-max-width:125px;
-align-items: center;
-justify-content: start;
-`;
+const UploadImg = ({ bgImg, cbProp }) => {
+	const hiddenFileInput = React.useRef(null);
 
-
-const fakedb = [
-	{
-		id: 1,
-        img:
-			"https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=953&q=80",
-	description:"Upload Image"
-        },
-];
-
-const ImageUpload = ({ImageUploading}) => {
-    return <Container> 
-    {ImageUploading.map((o) => {
-return <ImageCont Onclick={() => {
-     o.img
-}}
->
-        <Image src={require('./UploadImage.png')}></Image>
-        <Text>{o.description}</Text>
-    </ImageCont>
-    })}
-    </Container>
+	const handleClick = (event) => {
+		hiddenFileInput.current.click();
+	};
+	// const handleChange = event => {
+	//     const fileUploaded = event.target.files[0];
+	// };
+	return (
+		<ImgDiv bgImg={bgImg} className="">
+			<button onClick={handleClick}>
+				<svg
+					width="17"
+					height="17"
+					viewBox="0 0 17 17"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M2.81567 8.31689H14.7797"
+						stroke="white"
+						stroke-width="4"
+						stroke-linecap="round"
+					/>
+					<path
+						d="M8.5 14.0423V2.00001"
+						stroke="white"
+						stroke-width="4"
+						stroke-linecap="round"
+					/>
+				</svg>
+			</button>
+			<input
+				type="file"
+				accept="image/x-png,image/gif,image/jpeg"
+				multiple
+				ref={hiddenFileInput}
+				onChange={cbProp}
+				style={{ display: "none" }}
+			/>
+		</ImgDiv>
+	);
 };
 
-
-ImageUpload.defaultProps = {
-ImageUploading:fakedb,
+UploadImg.defaultProps = {
+	bgImg: "#DCEFFB",
 };
-
-export default ImageUpload;
-
+export default UploadImg;
