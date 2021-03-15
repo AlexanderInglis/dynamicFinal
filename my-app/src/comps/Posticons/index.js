@@ -3,6 +3,7 @@ import Subheading from "../../comps/Subheading";
 import Avatar from "../../comps/Avatar";
 import styled from "styled-components";
 import Like from "../LikeButton";
+import Comment from "../Posticons/chat.png";
 
 const Headerpart = styled.div`
 	max-width: 375px;
@@ -27,6 +28,10 @@ const Titlepart = styled.div`
 	padding: 5px;
 `;
 
+const ChatIcon = styled.img`
+	width: 20px;
+	padding-right: 5px;
+`;
 const Profilename = styled.div`
 	display: flex;
 `;
@@ -66,7 +71,7 @@ const Posticons = ({ profileName, avatarImg }) => {
 					<Like />
 				</Titlepart>
 				<Checkimg>
-					<img src={require("./chat.png")} />
+					<ChatIcon src={Comment} />
 				</Checkimg>
 			</RightCont>
 		</Headerpart>
