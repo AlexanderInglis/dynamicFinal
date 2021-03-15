@@ -211,6 +211,8 @@ const BottomNav = ({ active }) => {
 	);
 };
 
-BottomNav.defaultProps = {};
+BottomNav.defaultProps = {
+	active: 1,
+};
 
 export default BottomNav;
