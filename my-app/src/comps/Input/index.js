@@ -7,7 +7,10 @@ flex-direction: column;
 `;
 
 const InputLabel = styled.label`
-color: #676767;
+font-size:18px;
+font-style: normal;
+font-family: Lato;
+color: #000;
 `;
 
 const InputCont = styled.input`
@@ -19,6 +22,7 @@ color: #676767;
 ::placeholder{
     color: #C4C4C4};
 border:solid 1px #DDD9D9;
+box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.15);
 `;
 
 const Input = ({placeholder, text,value, onChange}) => {
