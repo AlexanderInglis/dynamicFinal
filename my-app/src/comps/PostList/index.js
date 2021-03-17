@@ -11,7 +11,6 @@ max-width:375px;
 max-height:500px;
 display: grid;
 grid-template-columns:repeat(3, 125px);
-background:blue;
 `;
 
 
@@ -39,6 +38,18 @@ const PostList = ({PostImg}) => {
                  {PostImg.map((o) => {
            return <ImageContainer>
        <Image src={o.img}></Image>
+    <Image src={o.img}></Image>
+    <Image src={o.img}></Image>
+    <Image src={o.img}></Image>
+    <Image src={o.img}></Image>
+    <Image src={o.img}></Image>
+    <Image src={o.img}></Image>
+    <Image src={o.img}></Image>
+    <Image src={o.img}></Image>
+    <Image src={o.img}></Image>
+    <Image src={o.img}></Image>
+    <Image src={o.img}></Image>
+    <Image src={o.img}></Image>
     <Image src={o.img}></Image>
     <Image src={o.img}></Image>
     <Image src={o.img}></Image>

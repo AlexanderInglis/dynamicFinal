@@ -51,7 +51,7 @@ const SearchBar = ({ placeholder }) => {
 };
 
 SearchBar.defaultProps = {
-	placeholder: "Search",
+	placeholder: "Search Trending",
 };
 
 export default SearchBar;
