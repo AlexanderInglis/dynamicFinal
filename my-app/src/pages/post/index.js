@@ -6,11 +6,22 @@ import Button from "comps/Button";
 import Logo from "../landing/CravingsLogo.png";
 import Userpost from "comps/Userpost";
 import BottomNav from "comps/NavBar";
-
-const CravingsLogo = styled.img``;
+import Ingredientslist from "comps/Ingredientslist";
+import Comments from "comps/Comments";
+import CommentInput from "comps/CommentInput";
 
 const Spacer = styled.div`
-	height: 100px;
+	height: 200px;
+`;
+
+const CmntCont = styled.div``;
+
+const IngCont = styled.div`
+	margin-top: -15%;
+`;
+
+const H3 = styled.h3`
+	padding-left: 10px;
 `;
 
 const BottomNavCont = styled.div`
@@ -20,20 +31,29 @@ const BottomNavCont = styled.div`
 	left: 0;
 `;
 
-const Main = () => {
+const Post = () => {
 	//must do all axios here
 
 	return (
-		<div className="main">
+		<div className="post">
 			<Userpost />
-			<Userpost />
-			<Userpost />
-			<Spacer />
+			<IngCont>
+				<Ingredientslist />
+			</IngCont>
+
+			<CmntCont>
+				<H3>Comments</H3>
+				<Comments />
+				<Comments />
+				<Spacer />
+			</CmntCont>
+
 			<BottomNavCont>
+				<CommentInput />
 				<BottomNav active={1} />
 			</BottomNavCont>
 		</div>
 	);
 };
 
-export default Main;
+export default Post;

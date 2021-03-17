@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-const SendIconImage = require("./sendIcon.png");
+import SendIconImage from "../CommentInput/sendIcon.png";
 
 const InputBox = styled.div`
 	max-width: 375px;
@@ -9,29 +9,30 @@ const InputBox = styled.div`
 	display: flex;
 	flex-direction: column;
 	background: white;
-	background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+	background: linear-gradient(
+		180deg,
+		rgba(255, 255, 255, 0) 0%,
+		rgba(255, 255, 255, 0.9) 30.56%
+	);
+
 	display: flex;
 	overflow: hidden;
+	justify-content: center;
+	align-items: center;
 `;
 
 const InputCont = styled.input`
-  min-height: 48px;
-  max-width: 335px;
-  margin-top: 4px;
-  color: #676767;
-  border-width:0px;
-  border:none;
-  padding-left:10px;
-  ::placeholder{
-      color: #AAAAAA
-    font-size:20px;};
-    background: white;
-    outline none;
+	min-height: 48px;
+	min-width: 235px;
+	margin-top: 4px;
+	color: #676767;
+	border-width: 0px;
+	border: none;
 `;
 
 const InputContainer = styled.div`
 	min-height: 48px;
-	max-width: 335px;
+	min-width: 335px;
 	margin-top: 4px;
 	border-radius: 4px;
 	color: #676767;

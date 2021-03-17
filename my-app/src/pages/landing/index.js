@@ -19,7 +19,7 @@ const LogoCont = styled.div`
 	justify-content: space-around;
 	text-align: center;
 	align-items: center;
-	padding-top: 50px;
+	padding-top: 150px;
 `;
 
 const BtnCont = styled.div`

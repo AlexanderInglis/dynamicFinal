@@ -2,11 +2,11 @@ import React from "react";
 import styled from "styled-components";
 
 const ImgDiv = styled.div`
-min-height: 188px;
-min-width:129px;
-max-width:150px;
+min-height: 181px;
+min-width: 234px;
+max-width: 150px;
 margin-right: 24px;
-background-color:#DCEFFB;
+background-color:#FF2B51;
 border-radius:10px;
 display:flex;
 align-items: center;
@@ -15,13 +15,14 @@ background-image: url("${(props) => props.bgImg}");
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
+margin-bottom:10%;
 }
 button{
     border-radius:100px;
     width:30px;
     height:30px;
     border:none;
-    background: linear-gradient(139.4deg, #175FA4 -8.97%, #39A6DC 100%);
+    background: white);
     display:flex;
     align-items: center;
     justify-content: center;
@@ -54,13 +55,13 @@ const UploadImg = ({ bgImg, cbProp }) => {
 				>
 					<path
 						d="M2.81567 8.31689H14.7797"
-						stroke="white"
+						stroke="#FF2B51"
 						stroke-width="4"
 						stroke-linecap="round"
 					/>
 					<path
 						d="M8.5 14.0423V2.00001"
-						stroke="white"
+						stroke="#FF2B51"
 						stroke-width="4"
 						stroke-linecap="round"
 					/>

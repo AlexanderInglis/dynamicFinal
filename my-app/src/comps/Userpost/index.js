@@ -4,7 +4,7 @@ import Posticons from "../../comps/Posticons";
 
 const Taskboxcontainer = styled.div`
 	max-width: 375px;
-	min-height: 460px;
+
 	display: flex;
 	align-items: center;
 	flex-direction: column;
