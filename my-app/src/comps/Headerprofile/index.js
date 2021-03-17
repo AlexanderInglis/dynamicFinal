@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import Avatar from '../../comps/Avatar';
 import styled from 'styled-components';
 
+import img from "../Headerprofile/more.png";
 
 const Taskboxcontainer = styled.div`
 width: 100%;
@@ -20,7 +21,7 @@ const Headerpart = styled.div`
   display:flex;
   justify-content:space-between;
   align-items:center;
-  margin:10px;
+  margin:px;
 `;
 
 const Closeimg = styled.div`
@@ -32,7 +33,7 @@ margin-right:15px;
 
 const Checkimg = styled.div`
 margin-left:40px;
-margin-bottom:30px;
+margin-bottom:90px;
 `;
 
 const Titlepart = styled.div`
@@ -43,7 +44,6 @@ const Description = styled.div`
 font-style:medium;
 font-weight:medium;
 font-size:30px;
-position: fixed;
 `;
 
 
@@ -87,9 +87,9 @@ const TaskHeader = ({profileName, LocationText, avatarImg})=> {
           <Headerpart>
           <Closeimg><Avatar width="75px" height="75px" bgimg={avatarImg}/></Closeimg>
           <Titlepart><HeaderName fontsize="18px" fontweight="light">{profileName}</HeaderName>
-          <Description><Location fontsize="10px" fontwieght="light">{LocationText}</Location></Description>
+          <Description><Location fontsize="10px" fontweight="light">{LocationText}</Location></Description>
           </Titlepart>
-          <Checkimg><img src={require('./more.png')} /></Checkimg>
+          <Checkimg><img src={img} /></Checkimg>
           </Headerpart>
 
         </Taskboxcontainer>
