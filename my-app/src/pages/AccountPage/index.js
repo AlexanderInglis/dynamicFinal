@@ -6,26 +6,25 @@ import ProfileFollow from "../../comps/Profilefollow";
 import PostList from "../../comps/PostList";
 import BottomNav from "comps/NavBar";
 
-
 const Spacer = styled.div`
-	height: 20px;
+	height: 100px;
 `;
 
 const BottomNavCont = styled.div`
 	position: fixed;
 	width: 100%;
 	bottom: 0;
+	left: 0;
 `;
-
 
 const Account = () => {
 	//must do all axios here
 
 	return (
 		<div className="main">
-            <ProfileFollow/>
-            <Spacer/>
-            <PostList/>           
+			<ProfileFollow />
+			<Spacer />
+			<PostList />
 			<BottomNavCont>
 				<BottomNav active={4} />
 			</BottomNavCont>

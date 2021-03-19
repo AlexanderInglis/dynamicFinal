@@ -1,5 +1,12 @@
 import "./App.scss";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import axios from "axios";
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	Link,
+	useHistory,
+} from "react-router-dom";
 import Main from "pages/main";
 import Landing from "../src/pages/landing";
 import Post from "pages/post";
@@ -10,7 +17,11 @@ import AccountSetting from "pages/AccountSetting";
 import SignUp from "pages/SignUp";
 import Login from "pages/Login";
 
-//Use the route path I've provided
+const token = sessionStorage.getItem("token");
+if (token) {
+	axios.defaults.headers.common["Authorization"] = "Bearer " + token;
+}
+
 function App() {
 	return (
 		<Router>
@@ -18,6 +29,12 @@ function App() {
 				<Switch>
 					<Route exact path="/">
 						<Landing />
+					</Route>
+					<Route exact path="/SignUp">
+						<SignUp />
+					</Route>
+					<Route exact path="/Login">
+						<Login />
 					</Route>
 					<Route exact path="/main">
 						<Main />
@@ -38,12 +55,6 @@ function App() {
 					</Route>
 					<Route exact path="/AccountSetting">
 						<AccountSetting />
-					</Route>
-					<Route exact path="/SignUp">
-						<SignUp />
-					</Route>
-					<Route exact path="/Login">
-						<Login />
 					</Route>
 				</Switch>
 			</div>

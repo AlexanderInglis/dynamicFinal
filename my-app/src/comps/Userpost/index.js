@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Posticons from "../../comps/Posticons";
+import { useHistory } from "react-router-dom";
 
 const Taskboxcontainer = styled.div`
 	max-width: 375px;
@@ -63,12 +64,13 @@ const fakedb = [
 ];
 
 const Userpost = ({ post }) => {
+	const history = useHistory();
 	return (
 		<Taskboxcontainer>
 			{post.map((o) => (
 				<Headerpart>
 					<Checkimg>
-						<Img src={o.img} />
+						<Img onClick={() => history.push("/post")} src={o.img} />
 					</Checkimg>
 					<CommentBox>
 						<Posticons profileName={o.username} avatarImg={o.profileImg} />
