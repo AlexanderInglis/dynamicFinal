@@ -7,8 +7,6 @@ import Logo from "../landing/CravingsLogo.png";
 import Userpost from "comps/Userpost";
 import BottomNav from "comps/NavBar";
 
-const CravingsLogo = styled.img``;
-
 const Spacer = styled.div`
 	height: 100px;
 `;
@@ -21,7 +19,25 @@ const BottomNavCont = styled.div`
 `;
 
 const Main = () => {
-	//must do all axios here
+	const history = useHistory();
+	const CheckStorage = async () => {
+		var resp = await axios.get("http://localhost:8080/api/verify");
+		console.log(resp.data);
+		if (
+			resp.data !== "no token sent to server" &&
+			resp.data !== "Invalid Token"
+		) {
+			history.push("/main");
+			console.log("Good token");
+		} else {
+			history.push("/login");
+			console.log("Bad token");
+		}
+	};
+
+	useEffect(() => {
+		CheckStorage();
+	}, []);
 
 	return (
 		<div className="main">
