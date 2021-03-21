@@ -1,8 +1,9 @@
 .App {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 	width: 100vw;
 	min-height: 100vh;
+	place-content: center;
 }
 
 .landing {
@@ -11,14 +12,37 @@
 	align-items: center;
 	width: 90vw;
 	height: 100vh;
-    justify-content: space-around;
-
+	justify-content: space-around;
 }
 
-@import '../src/pages/Search/search.scss';
+.post {
+	flex-direction: column;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	justify-content: space-around;
+}
 
-@import '../src/pages/Login/login.scss';
+.createPost {
+	flex-direction: column;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	justify-content: space-around;
+}
 
-@import '../src/pages/signup/signup.scss';
+.searching {
+	padding-top: 15%;
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	height: 100vh;
+}
 
-@import '../src/pages/AccountSetting/accountsetting.scss'
+@import "../src/pages/Search/search.scss";
+
+@import "../src/pages/Login/login.scss";
+
+@import "../src/pages/signup/signup.scss";
+
+@import "../src/pages/AccountSetting/accountsetting.scss";

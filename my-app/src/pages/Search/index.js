@@ -6,7 +6,7 @@ import SearchBar from "../../comps/SearchBar";
 import ListToggle from "../../comps/ListToggle";
 import PostList from "../../comps/PostList";
 import BottomNav from "comps/NavBar";
-
+import "../../App.scss";
 
 const BottomNavCont = styled.div`
 	position: fixed;
@@ -14,22 +14,22 @@ const BottomNavCont = styled.div`
 	bottom: 0;
 `;
 
-
 const Search = () => {
 	//must do all axios here
 
 	return (
-		<div className="search">
-            <div className="Searchbar">
-            <SearchBar/>
-            </div>
-            <div className="TagTitle">
-            <p>What's Trending</p>
-            </div>
-            <div className="tagselection">
-            <ListToggle/>
-            </div>
-            <PostList/>
+		<div className="searching">
+			<div className="Searchbar">
+				<SearchBar />
+			</div>
+			<div className="TagTitle">
+				<p>What's Trending</p>
+			</div>
+			<div className="tagselection">
+				<ListToggle />
+			</div>
+			<PostList />
+
 			<BottomNavCont>
 				<BottomNav active={2} />
 			</BottomNavCont>

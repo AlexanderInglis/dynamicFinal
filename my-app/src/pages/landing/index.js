@@ -19,7 +19,7 @@ const LogoCont = styled.div`
 	justify-content: space-around;
 	text-align: center;
 	align-items: center;
-	padding-top: 50px;
+	padding-top: 150px;
 `;
 
 const BtnCont = styled.div`
@@ -32,6 +32,7 @@ const BtnCont = styled.div`
 
 const Landing = () => {
 	//must do all axios here
+	const history = useHistory();
 
 	return (
 		<div className="landing">
@@ -41,8 +42,8 @@ const Landing = () => {
 			</LogoCont>
 
 			<BtnCont>
-				<Button text="Login" />
-				<Button text="Sign up" />
+				<Button onClick={() => history.push("/login")} text="Login" />
+				<Button onClick={() => history.push("/SignUp")} text="Sign up" />
 			</BtnCont>
 		</div>
 	);

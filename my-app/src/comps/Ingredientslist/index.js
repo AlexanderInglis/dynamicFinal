@@ -7,13 +7,14 @@ const IngList = styled.div`
 	justify-content: left;
 	align-items: center;
 	flex-direction: column;
+	padding: 10px;
 `;
 
 const Headerpart = styled.div`
-max-width:279px;
-display: grid;
-grid-template-columns: auto auto;
-grid-gap: 5px;
+	max-width: 279px;
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-gap: 5px;
 	margin: 10px;
 `;
 
@@ -21,7 +22,6 @@ const ListItem = styled.div`
 	display: flex;
 	justify-content: left;
 	align-items: center;
-	
 `;
 
 const Bullet = styled.div`
@@ -31,7 +31,7 @@ const Bullet = styled.div`
 	height: 5px;
 	width: 5px;
 	background-color: #fff;
-	border: 3px solid red;
+	border: 3px solid #ff2b51;
 	border-radius: 50%;
 	margin-right: 10px;
 `;
@@ -40,8 +40,7 @@ const ingredients = styled.div`
 	font-size: 18px;
 `;
 
-const IngName = styled.div`
-`;
+const IngName = styled.div``;
 
 const fakedb = [
 	{

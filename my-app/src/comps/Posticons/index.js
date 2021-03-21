@@ -4,6 +4,7 @@ import Avatar from "../../comps/Avatar";
 import styled from "styled-components";
 import Like from "../LikeButton";
 import Comment from "../Posticons/chat.png";
+import { useHistory } from "react-router-dom";
 
 const Headerpart = styled.div`
 	max-width: 375px;
@@ -58,20 +59,21 @@ const LeftCont = styled.div`
 `;
 
 const Posticons = ({ profileName, avatarImg }) => {
+	const history = useHistory();
 	return (
 		<Headerpart>
-			<LeftCont>
+			<LeftCont onClick={() => history.push("/Account")}>
 				<Avatar width="25px" height="25px" bgimg={avatarImg} />
 				<Profile>{profileName}</Profile>
 			</LeftCont>
 
 			<RightCont>
-				<a>Learn Recipe</a>
+				<a onClick={() => history.push("/Post")}>Learn Recipe</a>
 				<Titlepart>
 					<Like />
 				</Titlepart>
 				<Checkimg>
-					<ChatIcon src={Comment} />
+					<ChatIcon onClick={() => history.push("/Post")} src={Comment} />
 				</Checkimg>
 			</RightCont>
 		</Headerpart>

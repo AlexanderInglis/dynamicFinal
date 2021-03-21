@@ -4,26 +4,29 @@ import Avatar from "../../comps/Avatar";
 import Subheading from "../../comps/Subheading";
 
 const Taskboxcontainer = styled.div`
-	max-width: 100%;
-	height: auto;
+	max-width: 334px;
+	min-height: 43px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	position: relative;
 `;
 
 const Headerpart = styled.div`
 	margin-left: auto;
 	margin-right: auto;
-	width: 50%;
+	width: 100%;
+	padding: 10px;
 `;
 
 const Closeimg = styled.a`
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	position: fixed;
+	position: absolute;
 	display: flex;
+	left: 20px;
 `;
 
 const CommentBox = styled.div`
@@ -41,7 +44,7 @@ const Checkimg = styled.a`
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	position: fixed;
+	position: absolute;
 	display: flex;
 	margin-right: 5px;
 	padding-right: 5px;
