@@ -86,7 +86,7 @@ const fakedb = [
 	},
 ];
 
-const Profilefollow = ({ profileaccount }) => {
+const Profilefollow = ({ profileaccount, profileName }) => {
 	return (
 		<Container>
 			{profileaccount.map((o) => {
@@ -94,7 +94,7 @@ const Profilefollow = ({ profileaccount }) => {
 					<Logboxcontainer>
 						<Headerpart>
 							<TaskHeader
-								profileName={o.username}
+								profileName={profileName}
 								LocationText={o.Location}
 								avatarImg={o.profileImg}
 							/>
@@ -131,6 +131,7 @@ const Profilefollow = ({ profileaccount }) => {
 
 Profilefollow.defaultProps = {
 	profileaccount: fakedb,
+	profileName: "test",
 };
 
 export default Profilefollow;

@@ -7,7 +7,7 @@ import PostList from "../../comps/PostList";
 import BottomNav from "comps/NavBar";
 
 const Spacer = styled.div`
-	height: 100px;
+	height: 30px;
 `;
 
 const BottomNavCont = styled.div`
@@ -19,10 +19,32 @@ const BottomNavCont = styled.div`
 
 const Account = () => {
 	//must do all axios here
+	const [userId, setId] = useState("");
+	const [user, setUser] = useState();
+
+	const Verify = async () => {
+		var resp = await axios.get("http://localhost:8080/api/verify");
+		console.log("verify", resp.data);
+		setId(resp.data.id);
+	};
+
+	const GetUser = async () => {
+		var resp = await axios.get(
+			`http://localhost:8080/api/single_user/${userId}`
+		);
+		console.log(resp.data);
+		setUser(resp.data.users);
+		console.log(user[0]);
+	};
+
+	useEffect(() => {
+		Verify();
+		GetUser();
+	}, []);
 
 	return (
-		<div className="main">
-			<ProfileFollow />
+		<div className="searching">
+			<ProfileFollow profileName={user[0].username} />
 			<Spacer />
 			<PostList />
 			<BottomNavCont>

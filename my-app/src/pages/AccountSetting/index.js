@@ -12,6 +12,10 @@ const Spacer = styled.div`
 	height: 15px;
 `;
 
+const BigSpacer = styled.div`
+	height: 100px;
+`;
+
 const BottomNavCont = styled.div`
 	position: fixed;
 	width: 100%;
@@ -21,7 +25,7 @@ const BottomNavCont = styled.div`
 
 const AccountSetting = () => {
 	//must do all axios here
-
+	const history = useHistory();
 	return (
 		<div className="Setting">
 			<div className="SettingContent">
@@ -41,6 +45,16 @@ const AccountSetting = () => {
 				<InputBox placeholder="New Password" />
 				<Spacer />
 				<Button text="Save" />
+				<br />
+				<Button
+					onClick={() => {
+						sessionStorage.clear();
+						axios.defaults.headers.common["Authorization"] = null;
+						history.push("/");
+					}}
+					text="Logout"
+				/>
+				<BigSpacer />
 			</div>
 			<BottomNavCont>
 				<BottomNav active={4} />
