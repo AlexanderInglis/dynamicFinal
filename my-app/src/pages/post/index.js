@@ -9,6 +9,7 @@ import BottomNav from "comps/NavBar";
 import Ingredientslist from "comps/Ingredientslist";
 import Comments from "comps/Comments";
 import CommentInput from "comps/CommentInput";
+import { useParams } from "react-router-dom";
 
 const Spacer = styled.div`
 	height: 200px;
@@ -32,24 +33,56 @@ const BottomNavCont = styled.div`
 `;
 
 const Post = () => {
-	//must do all axios here
+	const [allComments, setAllComments] = useState([]);
+	const [singlePost, setSinglePost] = useState([]);
+	const params = useParams();
+	console.log(params.id);
+
+	const GetAllComments = async () => {
+		const resp = await axios.get(
+			"http://localhost:8080/api/comment/" + params.id
+		);
+		setAllComments([...resp.data.comments]);
+		console.log(resp.data);
+	};
+
+	const GetSinglePosts = async () => {
+		const resp = await axios.get("http://localhost:8080/api/post/" + params.id);
+		setSinglePost([...resp.data.post]);
+		console.log(resp.data);
+	};
+
+	const HandleComment = async (comment) => {
+		console.log(comment);
+		const resp = await axios.post(
+			"http://localhost:8080/api/comment/" + params.id,
+			{ comment_text: comment }
+		);
+		console.log(resp.data);
+		GetAllComments();
+	};
+
+	useEffect(() => {
+		GetAllComments();
+		GetSinglePosts();
+	}, []);
 
 	return (
 		<div className="post">
-			<Userpost />
+			<Userpost post={singlePost} />
 			<IngCont>
 				<Ingredientslist />
 			</IngCont>
 
 			<CmntCont>
 				<H3>Comments</H3>
-				<Comments />
-				<Comments />
+
+				<Comments comment={allComments} />
 				<Spacer />
 			</CmntCont>
 
 			<BottomNavCont>
-				<CommentInput />
+				<CommentInput onSend={HandleComment} />
 				<BottomNav active={1} />
 			</BottomNavCont>
 		</div>

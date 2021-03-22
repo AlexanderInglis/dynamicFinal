@@ -34,7 +34,7 @@ const Login = () => {
 		) {
 			console.log(resp.data);
 			const token = resp.data.accessToken;
-			sessionStorage.setItem("token: ", token);
+			sessionStorage.setItem("token", token);
 			axios.defaults.headers.common["Authorization"] = "Bearer " + token;
 			history.push("/main");
 		} else {

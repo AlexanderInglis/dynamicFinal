@@ -67,17 +67,25 @@ const Userpost = ({ post }) => {
 	const history = useHistory();
 	return (
 		<Taskboxcontainer>
-			{post.map((o) => (
-				<Headerpart>
-					<Checkimg>
-						<Img onClick={() => history.push("/post")} src={o.img} />
-					</Checkimg>
-					<CommentBox>
-						<Posticons profileName={o.username} avatarImg={o.profileImg} />
-					</CommentBox>
-					<Comment>{o.description}</Comment>
-				</Headerpart>
-			))}
+			{post &&
+				post.map((o) => (
+					<Headerpart>
+						<Checkimg>
+							<Img
+								onClick={() => history.push("/post/" + o.id)}
+								src={o.post_img}
+							/>
+						</Checkimg>
+						<CommentBox>
+							<Posticons
+								profileName={o.username}
+								avatarImg={o.profileImg}
+								postId={o.id}
+							/>
+						</CommentBox>
+						<Comment>{o.description}</Comment>
+					</Headerpart>
+				))}
 		</Taskboxcontainer>
 	);
 };

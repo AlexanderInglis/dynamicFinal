@@ -47,88 +47,10 @@ const PostList = ({ PostImg }) => {
 				return (
 					<ImageContainer>
 						<ImgCont>
-							<Image onClick={() => history.push("/Post")} src={o.img}></Image>
-						</ImgCont>
-						<ImgCont>
-							<Image onClick={() => history.push("/Post")} src={o.img}></Image>
-						</ImgCont>
-						<ImgCont>
-							<Image onClick={() => history.push("/Post")} src={o.img}></Image>
-						</ImgCont>
-						<ImgCont>
-							<Image onClick={() => history.push("/Post")} src={o.img}></Image>
-						</ImgCont>
-						<ImgCont>
-							<Image onClick={() => history.push("/Post")} src={o.img}></Image>
-						</ImgCont>
-						<ImgCont>
-							<Image onClick={() => history.push("/Post")} src={o.img}></Image>
-						</ImgCont>
-						<ImgCont>
-							<Image onClick={() => history.push("/Post")} src={o.img}></Image>
-						</ImgCont>
-						<ImgCont>
-							<Image onClick={() => history.push("/Post")} src={o.img}></Image>
-						</ImgCont>
-						<ImgCont>
-							<Image onClick={() => history.push("/Post")} src={o.img}></Image>
-						</ImgCont>
-						<ImgCont>
-							<Image onClick={() => history.push("/Post")} src={o.img}></Image>
-						</ImgCont>
-						<ImgCont>
-							<Image onClick={() => history.push("/Post")} src={o.img}></Image>
-						</ImgCont>
-						<ImgCont>
-							<Image onClick={() => history.push("/Post")} src={o.img}></Image>
-						</ImgCont>
-						<ImgCont>
-							<Image onClick={() => history.push("/Post")} src={o.img}></Image>
-						</ImgCont>
-						<ImgCont>
-							<Image onClick={() => history.push("/Post")} src={o.img}></Image>
-						</ImgCont>
-						<ImgCont>
-							<Image onClick={() => history.push("/Post")} src={o.img}></Image>
-						</ImgCont>
-						<ImgCont>
-							<Image onClick={() => history.push("/Post")} src={o.img}></Image>
-						</ImgCont>
-						<ImgCont>
-							<Image onClick={() => history.push("/Post")} src={o.img}></Image>
-						</ImgCont>
-						<ImgCont>
-							<Image onClick={() => history.push("/Post")} src={o.img}></Image>
-						</ImgCont>
-						<ImgCont>
-							<Image onClick={() => history.push("/Post")} src={o.img}></Image>
-						</ImgCont>
-						<ImgCont>
-							<Image onClick={() => history.push("/Post")} src={o.img}></Image>
-						</ImgCont>
-						<ImgCont>
-							<Image onClick={() => history.push("/Post")} src={o.img}></Image>
-						</ImgCont>
-						<ImgCont>
-							<Image onClick={() => history.push("/Post")} src={o.img}></Image>
-						</ImgCont>
-						<ImgCont>
-							<Image onClick={() => history.push("/Post")} src={o.img}></Image>
-						</ImgCont>
-						<ImgCont>
-							<Image onClick={() => history.push("/Post")} src={o.img}></Image>
-						</ImgCont>
-						<ImgCont>
-							<Image onClick={() => history.push("/Post")} src={o.img}></Image>
-						</ImgCont>
-						<ImgCont>
-							<Image onClick={() => history.push("/Post")} src={o.img}></Image>
-						</ImgCont>
-						<ImgCont>
-							<Image onClick={() => history.push("/Post")} src={o.img}></Image>
-						</ImgCont>
-						<ImgCont>
-							<Image onClick={() => history.push("/Post")} src={o.img}></Image>
+							<Image
+								onClick={() => history.push("/Post/" + o.id)}
+								src={o.post_img}
+							></Image>
 						</ImgCont>
 					</ImageContainer>
 				);

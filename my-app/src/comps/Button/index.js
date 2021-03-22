@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const ButtonDiv = styled.div`
+const ButtonDiv = styled.button`
 	min-width: 279px;
 	height: 45px;
 	border-radius: 10px;
@@ -35,7 +35,6 @@ const Button = ({ bg, text, onClick }) => {
 Button.defaultProps = {
 	bg: "#FF2B51",
 	text: "Button",
-	onClick: () => {},
 };
 
 export default Button;

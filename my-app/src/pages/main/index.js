@@ -35,15 +35,23 @@ const Main = () => {
 		}
 	};
 
+	const [allPost, setAllPost] = useState([]);
+
+	const GetAllPosts = async () => {
+		const resp = await axios.get("http://localhost:8080/api/post");
+		setAllPost([...resp.data.posts]);
+		console.log(resp.data);
+	};
+
 	useEffect(() => {
 		CheckStorage();
+		GetAllPosts();
 	}, []);
 
 	return (
 		<div className="main">
-			<Userpost />
-			<Userpost />
-			<Userpost />
+			<Userpost post={allPost} />
+
 			<Spacer />
 			<BottomNavCont>
 				<BottomNav active={1} />
