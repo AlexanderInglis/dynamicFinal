@@ -17,12 +17,11 @@ import AccountSetting from "pages/AccountSetting";
 import SignUp from "pages/SignUp";
 import Login from "pages/Login";
 
-const token = sessionStorage.getItem("token");
-if (token) {
-	axios.defaults.headers.common["Authorization"] = "Bearer " + token;
-}
-
 function App() {
+	const token = sessionStorage.getItem("token");
+	if (token) {
+		axios.defaults.headers.common["Authorization"] = "Bearer " + token;
+	}
 	return (
 		<Router>
 			<div className="App">
@@ -40,7 +39,7 @@ function App() {
 						<Main />
 					</Route>
 
-					<Route exact path="/post">
+					<Route exact path="/post/:id">
 						<Post />
 					</Route>
 

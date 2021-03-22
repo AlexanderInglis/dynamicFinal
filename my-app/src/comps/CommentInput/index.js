@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled, { css } from "styled-components";
 
 import SendIconImage from "../CommentInput/sendIcon.png";
@@ -51,16 +51,31 @@ const SendIcon = styled.img`
 
 const Button = styled.a``;
 
-const CommentInput = ({ placeholder, text, value, onChange, iconsrc }) => {
+const CommentInput = ({
+	onSend,
+	placeholder,
+	text,
+	value,
+	onChange,
+	iconsrc,
+}) => {
+	const [comment, setCom] = useState("");
+
 	return (
 		<InputBox>
 			<InputContainer>
 				<InputCont
 					defaultValue={value}
 					placeholder={placeholder}
-					onChange={onChange}
+					onChange={(e) => {
+						setCom(e.target.value);
+					}}
 				/>
-				<Button>
+				<Button
+					onClick={() => {
+						onSend(comment);
+					}}
+				>
 					<SendIcon src={iconsrc}></SendIcon>
 				</Button>
 			</InputContainer>

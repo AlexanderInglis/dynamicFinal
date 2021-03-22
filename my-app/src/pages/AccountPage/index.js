@@ -19,34 +19,33 @@ const BottomNavCont = styled.div`
 
 const Account = () => {
 	//must do all axios here
-	const [userId, setId] = useState("");
-	const [user, setUser] = useState();
 
-	const Verify = async () => {
-		var resp = await axios.get("http://localhost:8080/api/verify");
-		console.log("verify", resp.data);
-		setId(resp.data.id);
+	const [user, setUser] = useState({});
+	const [myPosts, setMyPosts] = useState([]);
+
+	const GetPosts = async () => {
+		var resp = await axios.get(`http://localhost:8080/api/myPosts`);
+		console.log(resp.data);
+		setMyPosts(resp.data.posts);
 	};
 
 	const GetUser = async () => {
-		var resp = await axios.get(
-			`http://localhost:8080/api/single_user/${userId}`
-		);
+		var resp = await axios.get(`http://localhost:8080/api/myUser`);
 		console.log(resp.data);
-		setUser(resp.data.users);
-		console.log(user[0]);
+		setUser(resp.data.user[0]);
 	};
 
 	useEffect(() => {
-		Verify();
 		GetUser();
+		GetPosts();
 	}, []);
 
+	console.log(user);
 	return (
 		<div className="searching">
-			<ProfileFollow profileName={user[0].username} />
+			<ProfileFollow profileName={user.username} />
 			<Spacer />
-			<PostList />
+			<PostList PostImg={myPosts} />
 			<BottomNavCont>
 				<BottomNav active={4} />
 			</BottomNavCont>

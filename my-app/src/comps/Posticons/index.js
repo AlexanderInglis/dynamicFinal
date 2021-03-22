@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Like from "../LikeButton";
 import Comment from "../Posticons/chat.png";
 import { useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const Headerpart = styled.div`
 	max-width: 375px;
@@ -58,8 +59,10 @@ const LeftCont = styled.div`
 	align-items: center;
 `;
 
-const Posticons = ({ profileName, avatarImg }) => {
+const Posticons = ({ profileName, avatarImg, postId }) => {
 	const history = useHistory();
+	const params = useParams();
+
 	return (
 		<Headerpart>
 			<LeftCont onClick={() => history.push("/Account")}>
@@ -68,12 +71,15 @@ const Posticons = ({ profileName, avatarImg }) => {
 			</LeftCont>
 
 			<RightCont>
-				<a onClick={() => history.push("/Post")}>Learn Recipe</a>
+				<a onClick={() => history.push("/post/" + postId)}>Learn Recipe</a>
 				<Titlepart>
 					<Like />
 				</Titlepart>
 				<Checkimg>
-					<ChatIcon onClick={() => history.push("/Post")} src={Comment} />
+					<ChatIcon
+						onClick={() => history.push("/post/" + postId)}
+						src={Comment}
+					/>
 				</Checkimg>
 			</RightCont>
 		</Headerpart>

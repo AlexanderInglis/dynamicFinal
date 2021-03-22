@@ -73,7 +73,11 @@ const Comments = ({ comment }) => {
 						<Subheading text={o.username} fontsize="18px" fontweight="bold" />
 					</Checkimg>
 					<CommentBox>
-						<Subheading text={o.comment} fontsize="15px" fontweight="light" />
+						<Subheading
+							text={o.comment_text}
+							fontsize="15px"
+							fontweight="light"
+						/>
 					</CommentBox>
 				</Headerpart>
 			))}
