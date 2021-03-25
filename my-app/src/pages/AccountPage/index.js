@@ -51,7 +51,7 @@ const Account = () => {
 			/>
 			<Spacer />
 			<PostList PostImg={myPosts} />
-		
+
 			<BottomNavCont>
 				<BottomNav active={4} />
 			</BottomNavCont>
