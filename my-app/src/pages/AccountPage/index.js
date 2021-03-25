@@ -10,6 +10,10 @@ const Spacer = styled.div`
 	height: 30px;
 `;
 
+const Spacer2 = styled.div`
+	height: 10px;
+`;
+
 const BottomNavCont = styled.div`
 	position: fixed;
 	width: 100%;
@@ -47,6 +51,7 @@ const Account = () => {
 			/>
 			<Spacer />
 			<PostList PostImg={myPosts} />
+		
 			<BottomNavCont>
 				<BottomNav active={4} />
 			</BottomNavCont>

@@ -4,14 +4,14 @@ import { useHistory } from "react-router-dom";
 
 const Container = styled.div`
 	max-width: 375px;
-	min-height: 500px;
+	min-height: 100px;
+	display: grid;
+	grid-template-columns: repeat(3, 125px);
 `;
 
 const ImageContainer = styled.div`
 	max-width: 375px;
-	min-height: 500px;
-	display: grid;
-	grid-template-columns: repeat(3, 125px);
+	min-height: 0px;
 `;
 
 const ImgCont = styled.div`
@@ -28,7 +28,7 @@ border 1px solid black;
 `;
 
 const Spacer = styled.div`
-	height: 100px;
+	height: 200px;
 `;
 
 const fakedb = [
@@ -55,7 +55,6 @@ const PostList = ({ PostImg }) => {
 					</ImageContainer>
 				);
 			})}
-			<Spacer />
 		</Container>
 	);
 };

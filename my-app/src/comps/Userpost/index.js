@@ -34,6 +34,7 @@ const Checkimg = styled.div`
 	max-width: 378px;
 	max-height: 291px;
 	overflow: hidden;
+	background-size: auto 100%;
 `;
 
 const Comment = styled.div`

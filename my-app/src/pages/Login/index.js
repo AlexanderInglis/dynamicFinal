@@ -54,8 +54,8 @@ const Login = () => {
 			<div className="Inputs">
 				<Input
 					onChange={(e) => setUn(e.target.value)}
-					placeholder="Email"
-					text={"Email"}
+					placeholder="Username"
+					text={"Username"}
 				/>
 				<Spacer2 />
 				<Input

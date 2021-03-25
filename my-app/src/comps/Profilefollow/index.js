@@ -61,17 +61,18 @@ const Bottompart = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding-top: 20px;
 `;
 
-const Postsresult = styled.div``;
+const Postsresult = styled.div`
+padding-right: 60px;
+`;
 
 const Followersresult = styled.div`
-	margin-left: 60px;
-	margin-right: 60px;
 `;
 
-const Likesresult = styled.div``;
+const Likesresult = styled.div`
+padding-left: 60px;
+`;
 
 const fakedb = [
 	{
@@ -81,7 +82,6 @@ const fakedb = [
 		profileImg:
 			"https://images.unsplash.com/photo-1552058544-f2b08422138a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=944&q=80",
 		NumPosts: 16,
-		NumFollowers: 113,
 		NumLikes: 31,
 	},
 ];
@@ -99,24 +99,11 @@ const Profilefollow = ({ profileaccount, profileName, profilePic }) => {
 								avatarImg={profilePic}
 							/>
 						</Headerpart>
-
-						<Logincontainer>
-							<Followbutton text={"Follow"} bg={"#FF2B51"} />
-						</Logincontainer>
-
 						<Bottompart>
 							<Postsresult>
 								<Firstresult>{o.NumPosts}</Firstresult>
 								<Subheading text="Posts" fontsize="12px" fontweight="light" />
 							</Postsresult>
-							<Followersresult>
-								<Secondresult>{o.NumFollowers}</Secondresult>
-								<Subheading
-									text="Followers"
-									fontsize="12px"
-									fontweight="light"
-								/>
-							</Followersresult>
 							<Likesresult>
 								<Thirdresult>{o.NumLikes}</Thirdresult>
 								<Subheading text="Likes" fontsize="12px" fontweight="light" />

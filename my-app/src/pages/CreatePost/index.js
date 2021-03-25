@@ -25,7 +25,6 @@ const ImgUpload = styled.div`
 `;
 
 const Cont = styled.div`
-	position: relative;
 	display: flex;
 	flex-direction: column;
 	place-content: center;
@@ -33,7 +32,7 @@ const Cont = styled.div`
 	justify-content: space-around;
 	display: flex;
 	flex-direction: column;
-	min-height: 120%;
+	min-height: 30%;
 `;
 
 const FormPost = styled.form``;
@@ -54,6 +53,10 @@ const BottomNavCont = styled.div`
 	width: 100%;
 	bottom: 0;
 	left: 0;
+`;
+
+const Space = styled.div`
+	padding-bottom: 20px;
 `;
 
 const CreatePost = () => {
@@ -84,30 +87,44 @@ const CreatePost = () => {
 				<HeaderCont>
 					<BackHeader />
 				</HeaderCont>
+				<Space />
 				<form onSubmit={HandlePost}>
 					<ImgUpload>
 						<UploadImg />
 					</ImgUpload>
 					<input
+						className="inputImage"
 						id="file-input"
 						type="file"
 						accept="image/*"
 						filename={img}
 						onChange={(e) => setImg(e.target.files[0])}
 					></input>
-					<Input placeholder="Gay" onChange={(e) => setTag(e.target.value)} />
+					<Input
+						text="Tag"
+						placeholder="Baking"
+						onChange={(e) => setTag(e.target.value)}
+					/>
+					<Space />
 					{/* <Tag onSelect={setTag()} /> */}
 					<Input
 						text="Post Location"
 						placeholder="Vancouver"
 						onChange={(e) => setLocation(e.target.value)}
 					/>
+					<Space />
 					<Input
 						text="Post Description"
-						placeholder="Vancouver"
+						placeholder="My Food"
 						onChange={(e) => setDesc(e.target.value)}
 					/>
-					<textarea onChange={(e) => setIn(e.target.value)}></textarea>
+					<Space />
+					<Input
+						text="Ingredients"
+						placeholder="My Ingredients"
+						onChange={(e) => setIn(e.target.value)}
+					/>
+					<Space />
 					{/* <Ingredients>
 						<Input text="Ingredients" placeholder="Ingredient 01" />
 						<Input text={null} placeholder="Ingredient 02" />
@@ -116,7 +133,7 @@ const CreatePost = () => {
 						<Input text={null} placeholder="Ingredient 05" />
 						<Input text={null} placeholder="Ingredient 06" />
 					</Ingredients> */}
-					<button type="submit">HAHA GAY</button>
+					<button type="submit">Post</button>
 					{/* <Button text="Post" type="submit" /> */}
 					<Spacer />
 				</form>
