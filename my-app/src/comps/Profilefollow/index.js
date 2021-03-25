@@ -79,14 +79,14 @@ const fakedb = [
 		username: "John Doe",
 		Location: "Vancouver BC, Canada",
 		profileImg:
-			"https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80",
+			"https://images.unsplash.com/photo-1552058544-f2b08422138a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=944&q=80",
 		NumPosts: 16,
 		NumFollowers: 113,
 		NumLikes: 31,
 	},
 ];
 
-const Profilefollow = ({ profileaccount, profileName }) => {
+const Profilefollow = ({ profileaccount, profileName, profilePic }) => {
 	return (
 		<Container>
 			{profileaccount.map((o) => {
@@ -96,7 +96,7 @@ const Profilefollow = ({ profileaccount, profileName }) => {
 							<TaskHeader
 								profileName={profileName}
 								LocationText={o.Location}
-								avatarImg={o.profileImg}
+								avatarImg={profilePic}
 							/>
 						</Headerpart>
 

@@ -3,9 +3,7 @@ import axios from "axios";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 import Button from "comps/Button";
-
 import BottomNav from "comps/NavBar";
-
 import BackHeader from "comps/BackHeader";
 import UploadImg from "comps/UploadImage";
 import Tag from "comps/ListToggle";
@@ -97,11 +95,7 @@ const CreatePost = () => {
 						filename={img}
 						onChange={(e) => setImg(e.target.files[0])}
 					></input>
-					<Input
-						text="Tag"
-						placeholder="Gay"
-						onChange={(e) => setTag(e.target.value)}
-					/>
+					<Input placeholder="Gay" onChange={(e) => setTag(e.target.value)} />
 					{/* <Tag onSelect={setTag()} /> */}
 					<Input
 						text="Post Location"

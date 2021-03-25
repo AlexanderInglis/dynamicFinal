@@ -56,14 +56,14 @@ const fakedb = [
 		username: "John Doe",
 		description:
 			"lorem ipsum dolor sit amet. volutpat magna vel massa scelerisque vulputate. Etiam vitae vehicula elit, ipsum dolor sit amet.",
-		profileImg:
+		profile_photo_url:
 			"https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80",
 		img:
 			"https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=953&q=80",
 	},
 ];
 
-const Userpost = ({ post }) => {
+const Userpost = ({ post, profilePic }) => {
 	const history = useHistory();
 	return (
 		<Taskboxcontainer>
@@ -79,7 +79,7 @@ const Userpost = ({ post }) => {
 						<CommentBox>
 							<Posticons
 								profileName={o.username}
-								avatarImg={o.profileImg}
+								avatarImg={o.profile_photo_url}
 								postId={o.id}
 							/>
 						</CommentBox>

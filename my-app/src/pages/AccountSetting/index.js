@@ -24,8 +24,41 @@ const BottomNavCont = styled.div`
 `;
 
 const AccountSetting = () => {
-	//must do all axios here
 	const history = useHistory();
+	const [un, setUn] = useState("");
+	const [pass, setPass] = useState("");
+	const [fname, setFName] = useState("");
+	const [lname, setLName] = useState("");
+	const [photo, setPhoto] = useState("");
+	const [phone, setPhone] = useState("");
+	const [img, setImg] = useState("");
+
+	// const HandleChange = async () => {
+	// 	const resp = await axios.patch("http://localhost:8080/api/users", {
+	// 		username: un,
+	// 		first_name: fname,
+	// 		last_name: lname,
+	// 		profile_photo_url: photo,
+	// 		password: pass,
+	// 		phone_number: phone,
+	// 	});
+	// 	console.log(resp);
+	// };
+
+	const HandleChange = async (event) => {
+		event.preventDefault();
+
+		const data = new FormData();
+		data.append("image", photo);
+		data.append("first_name", fname);
+		data.append("last_name", lname);
+		data.append("username", un);
+		data.append("phone_number", phone);
+
+		let resp = await axios.patch("http://localhost:8080/api/users", data);
+		console.log("Editing post ", resp.data);
+	};
+
 	return (
 		<div className="Setting">
 			<div className="SettingContent">
@@ -37,14 +70,34 @@ const AccountSetting = () => {
 					<p>Change profile Pic</p>
 				</div>
 				<Spacer />
-				<InputBox placeholder="User Name" />
-				<InputBox placeholder="Email" />
-				<InputBox placeholder="Phone Number" />
-				<InputBox placeholder="Country" />
-				<InputBox placeholder="Old Password" />
-				<InputBox placeholder="New Password" />
-				<Spacer />
-				<Button text="Save" />
+				<form onSubmit={HandleChange}>
+					<InputBox
+						placeholder="Username"
+						onChange={(e) => setUn(e.target.value)}
+					/>
+					<InputBox
+						placeholder="First Name"
+						onChange={(e) => setFName(e.target.value)}
+					/>
+					<InputBox
+						placeholder="Last Name"
+						onChange={(e) => setLName(e.target.value)}
+					/>
+					<InputBox
+						placeholder="Phone Number"
+						onChange={(e) => setPhone(e.target.value)}
+					/>
+					<input
+						id="file-input"
+						type="file"
+						accept="image/*"
+						filename={photo}
+						onChange={(e) => setPhoto(e.target.files[0])}
+					></input>
+
+					<Spacer />
+					<Button text="Save" type="submit" />
+				</form>
 				<br />
 				<Button
 					onClick={() => {
