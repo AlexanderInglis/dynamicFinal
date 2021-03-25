@@ -29,7 +29,7 @@ const Signup = () => {
 			username: un,
 			first_name: fname,
 			last_name: lname,
-			profile_photo: photo,
+			profile_photo_url: "/DefaultProfileImg.png",
 			password: pass,
 			phone_number: phone,
 		});
@@ -38,8 +38,7 @@ const Signup = () => {
 			const token = resp.data.accessToken;
 			sessionStorage.setItem("token", token);
 			axios.defaults.headers.common["Authorization"] = "Bearer " + token;
-			history.push("/main")
-		
+			history.push("/login");
 		}
 	};
 
