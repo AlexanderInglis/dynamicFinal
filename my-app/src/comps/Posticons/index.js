@@ -59,14 +59,14 @@ const LeftCont = styled.div`
 	align-items: center;
 `;
 
-const Posticons = ({ profileName, avatarImg, postId }) => {
+const Posticons = ({ profileName, postId, avatarImg }) => {
 	const history = useHistory();
 	const params = useParams();
 
 	return (
 		<Headerpart>
 			<LeftCont onClick={() => history.push("/Account")}>
-				<Avatar width="25px" height="25px" bgimg={avatarImg} />
+				<Avatar width="25px" height="25px" avatarImg={avatarImg} />
 				<Profile>{profileName}</Profile>
 			</LeftCont>
 

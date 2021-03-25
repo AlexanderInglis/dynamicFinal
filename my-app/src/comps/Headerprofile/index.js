@@ -82,7 +82,7 @@ const TaskHeader = ({ profileName, LocationText, avatarImg }) => {
 		<Taskboxcontainer>
 			<Headerpart>
 				<Closeimg>
-					<Avatar width="75px" height="75px" bgimg={avatarImg} />
+					<Avatar width="75px" height="75px" avatarImg={avatarImg} />
 				</Closeimg>
 				<Titlepart>
 					<HeaderName fontsize="18px" fontweight="light">

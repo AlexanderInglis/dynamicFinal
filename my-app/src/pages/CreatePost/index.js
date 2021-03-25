@@ -3,9 +3,7 @@ import axios from "axios";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 import Button from "comps/Button";
-
 import BottomNav from "comps/NavBar";
-
 import BackHeader from "comps/BackHeader";
 import UploadImg from "comps/UploadImage";
 import Tag from "comps/ListToggle";
@@ -25,7 +23,6 @@ const ImgUpload = styled.div`
 	display: flex;
 	place-content: center;
 `;
-
 
 const Cont = styled.div`
 	display: flex;
@@ -59,7 +56,7 @@ const BottomNavCont = styled.div`
 `;
 
 const Space = styled.div`
-padding-bottom:20px;
+	padding-bottom: 20px;
 `;
 
 const CreatePost = () => {
@@ -90,13 +87,13 @@ const CreatePost = () => {
 				<HeaderCont>
 					<BackHeader />
 				</HeaderCont>
-				<Space/>
+				<Space />
 				<form onSubmit={HandlePost}>
 					<ImgUpload>
 						<UploadImg />
 					</ImgUpload>
 					<input
-					className="inputImage"
+						className="inputImage"
 						id="file-input"
 						type="file"
 						accept="image/*"
@@ -108,26 +105,26 @@ const CreatePost = () => {
 						placeholder="Baking"
 						onChange={(e) => setTag(e.target.value)}
 					/>
-					<Space/>
+					<Space />
 					{/* <Tag onSelect={setTag()} /> */}
 					<Input
 						text="Post Location"
 						placeholder="Vancouver"
 						onChange={(e) => setLocation(e.target.value)}
 					/>
-					<Space/>
+					<Space />
 					<Input
 						text="Post Description"
 						placeholder="My Food"
 						onChange={(e) => setDesc(e.target.value)}
 					/>
-					<Space/>
+					<Space />
 					<Input
 						text="Ingredients"
 						placeholder="My Ingredients"
 						onChange={(e) => setIn(e.target.value)}
 					/>
-					<Space/>
+					<Space />
 					{/* <Ingredients>
 						<Input text="Ingredients" placeholder="Ingredient 01" />
 						<Input text={null} placeholder="Ingredient 02" />

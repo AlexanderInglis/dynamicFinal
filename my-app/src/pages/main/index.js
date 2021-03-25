@@ -50,7 +50,7 @@ const Main = () => {
 
 	return (
 		<div className="main">
-			<Userpost post={allPost} />
+			<Userpost profilePic={allPost} post={allPost} />
 
 			<Spacer />
 			<BottomNavCont>

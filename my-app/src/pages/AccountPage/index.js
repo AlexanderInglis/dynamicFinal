@@ -22,8 +22,6 @@ const BottomNavCont = styled.div`
 `;
 
 const Account = () => {
-	//must do all axios here
-
 	const [user, setUser] = useState({});
 	const [myPosts, setMyPosts] = useState([]);
 
@@ -47,7 +45,10 @@ const Account = () => {
 	console.log(user);
 	return (
 		<div className="searching">
-			<ProfileFollow profileName={user.username} />
+			<ProfileFollow
+				profilePic={user.profile_photo_url}
+				profileName={user.username}
+			/>
 			<Spacer />
 			<PostList PostImg={myPosts} />
 		
