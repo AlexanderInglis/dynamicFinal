@@ -39,7 +39,7 @@ const Main = () => {
 
 	const GetAllPosts = async () => {
 		const resp = await axios.get("http://localhost:8080/api/post");
-		setAllPost([...resp.data.posts]);
+		setAllPost(...[resp.data.posts]);
 		console.log(resp.data);
 	};
 
