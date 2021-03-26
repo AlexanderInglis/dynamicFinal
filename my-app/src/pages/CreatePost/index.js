@@ -22,6 +22,7 @@ const ImgUpload = styled.div`
 	position: relative;
 	display: flex;
 	place-content: center;
+	
 `;
 
 const Cont = styled.div`
@@ -35,18 +36,6 @@ const Cont = styled.div`
 	min-height: 30%;
 `;
 
-const FormPost = styled.form``;
-
-const Ingredients = styled.div`
-
-    justify-content;
-	height: 300px;
-    justify-content: space-around;
-    display: flex;
-    flex-direction: column;
-    padding-bottom:10%;
-
-`;
 
 const BottomNavCont = styled.div`
 	position: fixed;
@@ -59,7 +48,11 @@ const Space = styled.div`
 	padding-bottom: 20px;
 `;
 
+const Space2 = styled.div`
+	padding-bottom: 40px;
+`;
 const CreatePost = () => {
+	const history = useHistory();
 	const [location, setLocation] = useState("");
 	const [description, setDesc] = useState("");
 	const [tag, setTag] = useState("");
@@ -79,6 +72,7 @@ const CreatePost = () => {
 
 		let resp = await axios.post("http://localhost:8080/api/post", data);
 		console.log(resp.data);
+		history.push("/main");
 	};
 
 	return (
@@ -87,7 +81,6 @@ const CreatePost = () => {
 				<HeaderCont>
 					<BackHeader />
 				</HeaderCont>
-				<Space />
 				<form onSubmit={HandlePost}>
 					<ImgUpload>
 						<UploadImg />
@@ -124,7 +117,7 @@ const CreatePost = () => {
 						placeholder="My Ingredients"
 						onChange={(e) => setIn(e.target.value)}
 					/>
-					<Space />
+					<Space2 />
 					{/* <Ingredients>
 						<Input text="Ingredients" placeholder="Ingredient 01" />
 						<Input text={null} placeholder="Ingredient 02" />
@@ -133,7 +126,7 @@ const CreatePost = () => {
 						<Input text={null} placeholder="Ingredient 05" />
 						<Input text={null} placeholder="Ingredient 06" />
 					</Ingredients> */}
-					<button type="submit">Post</button>
+					<button type="submit" className="ButtonStyle">Post</button>
 					{/* <Button text="Post" type="submit" /> */}
 					<Spacer />
 				</form>
