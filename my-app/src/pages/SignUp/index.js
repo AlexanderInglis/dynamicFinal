@@ -51,29 +51,37 @@ const Signup = () => {
 				<Input
 					onChange={(e) => setFName(e.target.value)}
 					placeholder="First Name"
-					text={"First Name."}
+					text={"First Name"}
 				/>
 				<Spacer />
 				<Input
 					onChange={(e) => setLName(e.target.value)}
 					placeholder="Last Name"
+					text={"Last Name"}
 				/>
 				<Spacer />
-				<Input onChange={(e) => setUn(e.target.value)} placeholder="Username" />
+				<Input onChange={(e) => setUn(e.target.value)} 
+				placeholder="Username" 
+				text={"Username"}
+				/>
 				<Spacer />
 				<Input
 					onChange={(e) => setPhone(e.target.value)}
 					placeholder="+1 Phone"
+					text={"Phone Number"}
 				/>
 				<Spacer />
 				<Input
 					onChange={(e) => setPass(e.target.value)}
 					placeholder="Password"
+					text={"Password"}
 				/>
 				<Spacer />
 			</div>
 			<Spacer />
+			<div className="ButtonPosition">
 			<Button onClick={HandleRegister} text="Create Account" />
+			</div>
 		</div>
 	);
 };

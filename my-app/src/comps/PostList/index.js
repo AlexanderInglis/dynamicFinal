@@ -3,28 +3,34 @@ import styled, { css } from "styled-components";
 import { useHistory } from "react-router-dom";
 
 const Container = styled.div`
-	max-width: 375px;
-	min-height: 100px;
 	display: grid;
 	grid-template-columns: repeat(3, 125px);
 `;
 
 const ImageContainer = styled.div`
-	max-width: 375px;
-	min-height: 0px;
+	max-width: 125px;
 `;
 
 const ImgCont = styled.div`
 	max-height: 100px;
 	max-width: 125px;
-	overflow: hidden;
+	overflow:hidden;
+	border 1px solid black;
+	margin-left:1px;
+	margin-right:1px;
+	margin-bottom:1px;
+	margin-top:1px;
 `;
 
 const Image = styled.img`
 max-width: -webkit-fill-available;
 align-items: center;
 justify-content: start;
-border 1px solid black;
+display: block;
+  min-width:124px;
+  min-height:99px;
+  width: auto;
+  height: auto;
 `;
 
 const Spacer = styled.div`

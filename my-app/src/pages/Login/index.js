@@ -67,7 +67,9 @@ const Login = () => {
 					<p>Forgot your password?</p>
 				</div>
 			</div>
+			<div className="ButtonPosition">
 			<Button text="Login" onClick={HandleLogin} />
+			</div>
 		</div>
 	);
 };

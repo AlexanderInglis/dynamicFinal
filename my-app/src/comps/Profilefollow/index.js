@@ -27,52 +27,8 @@ const Headerpart = styled.div`
 	align-items: center;
 `;
 
-const Logincontainer = styled.div`
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	background-color: #fff;
-	border-radius: 10px;
-	margin-top: 10px;
-`;
 
-const Firstresult = styled.div`
-	display: flex;
-	justify-content: center;
-	align-items: center;
-`;
 
-const Secondresult = styled.div`
-	display: flex;
-	justify-content: center;
-	align-items: center;
-`;
-
-const Thirdresult = styled.div`
-	display: flex;
-	justify-content: center;
-	align-items: center;
-`;
-
-const Bottompart = styled.div`
-	width: auto;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-`;
-
-const Postsresult = styled.div`
-padding-right: 60px;
-`;
-
-const Followersresult = styled.div`
-`;
-
-const Likesresult = styled.div`
-padding-left: 60px;
-`;
 
 const fakedb = [
 	{
@@ -99,16 +55,6 @@ const Profilefollow = ({ profileaccount, profileName, profilePic }) => {
 								avatarImg={profilePic}
 							/>
 						</Headerpart>
-						<Bottompart>
-							<Postsresult>
-								<Firstresult>{o.NumPosts}</Firstresult>
-								<Subheading text="Posts" fontsize="12px" fontweight="light" />
-							</Postsresult>
-							<Likesresult>
-								<Thirdresult>{o.NumLikes}</Thirdresult>
-								<Subheading text="Likes" fontsize="12px" fontweight="light" />
-							</Likesresult>
-						</Bottompart>
 					</Logboxcontainer>
 				);
 			})}
